@@ -26,6 +26,8 @@ Source code: https://github.com/TianCimerman/Dashboard_react
 
 Source code: https://github.com/TianCimerman/SolarEdge-ModBusRead
 
+
+
 Raspberry Pi - Kiosk Mode Display
 
 -V dnevni sobi prikaže trenutno temperaturo in vlažnost, porabo enrgije...
@@ -33,6 +35,8 @@ Raspberry Pi - Kiosk Mode Display
 -Frontend narejen v Reactu.
 
 -Deluje v Raspberry Pi "Kiosk Mode" (Chromium v fullscreen načinu, samodejni zagon).
+
+
 
 
 ESP32 + Si7021 (Humidity & Temperature Sensor)
@@ -47,6 +51,7 @@ ESP32 + Si7021 (Humidity & Temperature Sensor)
 
 Source code: https://github.com/TianCimerman/FireB_Sensor
 
+
 Raspberry Pi 5 – Backend (InfluxDB, Grafana, Web Server)
 
 -Receives data from the ESP32 and stores it in InfluxDB.
@@ -58,6 +63,8 @@ Raspberry Pi 5 – Backend (InfluxDB, Grafana, Web Server)
 Source code: https://github.com/TianCimerman/Dashboard_react
 
 Source code: https://github.com/TianCimerman/SolarEdge-ModBusRead
+
+
 
 Raspberry Pi – Kiosk Mode Display
 
