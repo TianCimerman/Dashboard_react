@@ -1,11 +1,15 @@
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![HomeAutomation](https://github.com/user-attachments/assets/de01bad8-057f-4c11-bcea-a74cd66fdf1d)
 
 
 ESP32 + Si7021 (vlažnost & temperatura)
+
 -Napajanje: 18650 Li-ion baterija
+
 -Senzor: Si7021
+
 -Krmilnik: ESP32 DevKit
+
 Delovanje: Periodično meri temperaturo in vlažnost ter pošilja podatke prek WiFi na InfluxDb.
 
 
