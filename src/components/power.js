@@ -57,7 +57,7 @@ return (
       colors={['#00FF00', '#FFBF00', '#FF0000']}
       percent={percent}
       formatTextValue={() =>
-        power !== null ? `${power.toFixed(1)} kW` : "Loading..."
+        power !== null ? `${power} W` : 'Loading...'
       }
       arcPadding={0.02}
       arcWidth={0.3}

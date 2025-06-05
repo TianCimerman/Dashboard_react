@@ -18,12 +18,17 @@ const handleIframeToggle = () => {
   setLoadingIframe(true);
 };
 
-const handleIframeToggle2 = () => {
-  setIframeVisible2(!isIframeVisible2);
+const handleIframeToggle2 = async () => {
   setIframeVisible(false);
-  setLoadingIframe(true);
-  handleAutoLogin();
+  setIframeVisible2(false); // Hide iframe first
+  setLoadingIframe(true);   // Show loader immediately
+
+  await handleAutoLogin();  // Wait for auto-login to complete
+
+  // Now show the iframe
+  setIframeVisible2(true);
 };
+
 
 
 
