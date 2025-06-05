@@ -28,6 +28,12 @@ Source code: https://github.com/TianCimerman/SolarEdge-ModBusRead
 
 
 
+
+
+
+
+
+
 Raspberry Pi - Kiosk Mode Display
 
 -V dnevni sobi prikaže trenutno temperaturo in vlažnost, porabo enrgije...
