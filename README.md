@@ -20,7 +20,7 @@ Raspberry Pi 5 - Backend (InfluxDB, Grafana, Web Server)
 
 -Vizualizacija podatkov s pomočjo Grafana dashboarda.
 
--Gosti tudi spletno stran da dashboard.
+-Gosti tudi spletno stran do dashboard.
 
 Source code: https://github.com/TianCimerman/Dashboard_react
 
