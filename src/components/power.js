@@ -3,9 +3,11 @@
 import React, { useEffect, useState } from 'react';
 import GaugeChart from 'react-gauge-chart';
 import { InfluxDB } from '@influxdata/influxdb-client';
+import { useFastRefreshSignal } from "@/components/RefreshContext";
 
 const TemperatureGauge = () => {
   const [power, setPower] = useState(null);
+  const refreshSignal = useFastRefreshSignal(); // ✅ triggers every 1 min
 
   useEffect(() => {
     const url = "http://192.168.1.160:8086";
@@ -35,13 +37,16 @@ const TemperatureGauge = () => {
         console.log("Query completed");
       },
     });
-  }, []);
-  console.log("Power:", power);
-  const minValue = -15;
-  const maxValue = 15;
+    console.log("Power:", power);
 
-  const percent =
-    power !== null ? (power - minValue) / (maxValue - minValue) : 0.5;
+
+  }, [refreshSignal]);
+
+    const percent =
+      power !== null ? (power - minValue) / (maxValue - minValue) : 0.5;
+
+    const minValue = -15;
+    const maxValue = 15;
 
 return (
   <div 

@@ -7,11 +7,14 @@ import { InfluxDB } from "@influxdata/influxdb-client";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTemperatureLow } from '@fortawesome/free-solid-svg-icons';
 import { faTint } from '@fortawesome/free-solid-svg-icons';
+import { useRefreshSignal } from "@/components/RefreshContext";
+
 
 const Inside_Temp =() => {
 
 
   const [data, setData] = useState([]);
+    const refreshSignal = useRefreshSignal(); // ✅ triggers every 1 min
 
 
  useEffect(() => {
@@ -43,7 +46,7 @@ const Inside_Temp =() => {
       console.error("Error", error);
       },
     });
-  }, []);
+  }, [refreshSignal]);
 
   return (
 <div style={{ backgroundColor: 'hsl(218, 46%, 8%)' }} className="w-[33rem] rounded-3xl m-[2.5rem] p-[1.5rem] h-[20rem] hss:w-[26rem] ml-[1.5rem] ">

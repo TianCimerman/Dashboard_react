@@ -1,14 +1,28 @@
-import './globals.css';
+import "./globals.css";
+import { ReactNode } from "react";
+import { RefreshProvider, FastRefreshProvider, SlowRefreshProvider } from "@/components/RefreshContext";
 
 export const metadata = {
-  title: 'My App',
-  description: 'Using Tailwind with Next.js',
+  title: "Weather Dashboard",
+  description: "Live sensor data viewer",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+type RootLayoutProps = {
+  children: ReactNode;
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SlowRefreshProvider>
+          <RefreshProvider>
+            <FastRefreshProvider>
+              {children}
+            </FastRefreshProvider>
+          </RefreshProvider>
+        </SlowRefreshProvider>
+      </body>
     </html>
   );
 }
