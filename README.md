@@ -1,4 +1,4 @@
-
+![Posnetek zaslona 2025-06-06 190523](https://github.com/user-attachments/assets/d6e3bd7e-67c2-4bf2-9171-c850d3d98c57)
 ![HomeAutomation](https://github.com/user-attachments/assets/de01bad8-057f-4c11-bcea-a74cd66fdf1d)
 
 ## Opis sistema
@@ -62,5 +62,6 @@ Osnovni nadzorni sistem doma omogoča spremljanje temperature in vlage znotraj i
 - Runs in "Kiosk Mode" (Chromium in fullscreen, auto-start on boot).
 
 ## Screenshots
-![HomeAutomation](https://github.com/user-attachments/assets/de01bad8-057f-4c11-bcea-a74cd66fdf1d)
-![alt text](image.png)
+![Posnetek zaslona 2025-06-06 190523](https://github.com/user-attachments/assets/5522a99f-e2dc-422a-ab2e-43e6a8b9701e)
+![Posnetek zaslona 2025-06-06 185259](https://github.com/user-attachments/assets/44c208c0-7b24-4b7c-9a1f-c85066c4adec)
+
