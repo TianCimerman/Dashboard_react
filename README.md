@@ -1,4 +1,4 @@
-![Posnetek zaslona 2025-06-06 190523](https://github.com/user-attachments/assets/d6e3bd7e-67c2-4bf2-9171-c850d3d98c57)
+
 ![HomeAutomation](https://github.com/user-attachments/assets/de01bad8-057f-4c11-bcea-a74cd66fdf1d)
 
 ## Opis sistema
