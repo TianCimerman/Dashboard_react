@@ -132,27 +132,6 @@ const WeatherWidget = ({ city = "New York" }) => {
           }, [voltageIn, voltageOut, refreshSignal]);
         
 
-useEffect(() => {
-  if (typeof window === "undefined") return; // SSR guard
-
-  const today = new Date().toISOString().slice(0, 10); // ✅ Move this to top
-  const lastShownDate = localStorage.getItem("dailyToastDate");
-
-
-  if (lastShownDate !== today && validIn && validOut) {
-    if (voltageIn < 12) {
-      toast.error("Daily Alert: Low Voltage (IN)");
-    }
-    if (voltageOut < 12) {
-      toast.error("Daily Alert: Low Voltage (OUT)");
-    }
-    console.log("✅ Setting dailyToastDate");
-    localStorage.setItem("dailyToastDate", today);
-  } else {
-    console.log("⏭ Conditions not met");
-  }
-}, [voltageIn, voltageOut, refreshSignal]);
-
 
 
 

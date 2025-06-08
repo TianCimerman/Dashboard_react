@@ -42,11 +42,13 @@ const TemperatureGauge = () => {
 
   }, [refreshSignal]);
 
+  
+    const minValue = -15;
+    const maxValue = 15;
     const percent =
       power !== null ? (power - minValue) / (maxValue - minValue) : 0.5;
 
-    const minValue = -15;
-    const maxValue = 15;
+
 
 return (
   <div 
