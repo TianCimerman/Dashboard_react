@@ -1,39 +1,67 @@
 
-This project is a modern dashboard web application built with Next.js, React, Tailwind CSS, and TypeScript.
+![HomeAutomation](https://github.com/user-attachments/assets/de01bad8-057f-4c11-bcea-a74cd66fdf1d)
 
-## Getting Started
+## Opis sistema
 
-First, run the development server:
+Osnovni nadzorni sistem doma omogoča spremljanje temperature in vlage znotraj in zunaj. Dodatno beleži porabo električne energije celotne hiše. Vsi podatki se shranjujejo v podatkovno bazo InfluxDB in se prikazujejo s pomočjo platforme Grafana. Projekt temelji na uporabi naprav Arduino (ESP32) in Raspberry Pi ter ustreznih senzorjev. Za prikaz podatkov skrbi spletni vmesnik, kjer so na voljo meritve v realnem času in zgodovina meritev.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### ESP32 + Si7021 (vlažnost & temperatura)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Napajanje:** 18650 Li-ion baterija  
+- **Senzor:** Si7021  
+- **Krmilnik:** ESP32 DevKit  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Delovanje:** Periodično meri temperaturo in vlažnost ter pošilja podatke prek WiFi v InfluxDB.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+**Source code:**  
+- [FireB_Sensor](https://github.com/TianCimerman/FireB_Sensor)
 
-## Learn More
+### Raspberry Pi 5 – Backend (InfluxDB, Grafana, spletni strežnik)
 
-To learn more about Next.js, take a look at the following resources:
+- Sprejema podatke iz ESP32 in jih shranjuje v InfluxDB.  
+- Vizualizira podatke s pomočjo Grafana dashboarda.  
+- Gosti spletno stran z dashboardom.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Source code:**  
+- [Dashboard_react](https://github.com/TianCimerman/Dashboard_react)  
+- [SolarEdge-ModBusRead](https://github.com/TianCimerman/SolarEdge-ModBusRead)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Raspberry Pi – prikaz v "Kiosk načinu"
 
-## Deploy on Vercel
+- V dnevni sobi prikazuje trenutno temperaturo, vlažnost in porabo energije.  
+- Frontend je narejen v Reactu.  
+- Deluje v Raspberry Pi "Kiosk Mode" (Chromium v celozaslonskem načinu, samodejni zagon ob zagonu sistema).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### ESP32 + Si7021 (Humidity & Temperature Sensor)
 
-![image](https://github.com/user-attachments/assets/206beb1f-54d9-43c0-ad4b-3602709a363a)
+- **Power Supply:** 18650 Li-ion battery  
+- **Sensor:** Si7021  
+- **Microcontroller:** ESP32 DevKit  
+
+**Function:** Periodically measures temperature and humidity and sends the data via WiFi to InfluxDB.
+
+**Source code:**  
+- [FireB_Sensor](https://github.com/TianCimerman/FireB_Sensor)
+
+### Raspberry Pi 5 – Backend (InfluxDB, Grafana, Web Server)
+
+- Receives data from the ESP32 and stores it in InfluxDB.  
+- Visualizes data using Grafana dashboards.  
+- Hosts a web server that serves the dashboard frontend.
+
+**Source code:**  
+- [Dashboard_react](https://github.com/TianCimerman/Dashboard_react)  
+- [SolarEdge-ModBusRead](https://github.com/TianCimerman/SolarEdge-ModBusRead)
+
+### Raspberry Pi – Kiosk Mode Display
+
+- Displays current temperature, humidity, and energy consumption in the living room.  
+- Frontend built using React.  
+- Runs in "Kiosk Mode" (Chromium in fullscreen, auto-start on boot).
+
+## Screenshots
+![Posnetek zaslona 2025-06-06 190523](https://github.com/user-attachments/assets/5522a99f-e2dc-422a-ab2e-43e6a8b9701e)
+![Posnetek zaslona 2025-06-06 185259](https://github.com/user-attachments/assets/44c208c0-7b24-4b7c-9a1f-c85066c4adec)
+
